@@ -1,6 +1,6 @@
 
 
-function romanNumeral(decimalValue, currentRomanValue) {
+function calculateRomanNumeral(decimalValue, currentRomanValue) {
     //1. M --- div 1000
     var divValue = 0;
     var modValue = 0;
@@ -13,7 +13,7 @@ function romanNumeral(decimalValue, currentRomanValue) {
             currentRomanValue += "L";
         }
         if(modValue > 0) {
-            return romanNumeral(modValue,currentRomanValue);
+            return calculateRomanNumeral(modValue,currentRomanValue);
         }
         else {
             return currentRomanValue;
@@ -27,7 +27,7 @@ function romanNumeral(decimalValue, currentRomanValue) {
             currentRomanValue += "X";
         }
         if(modValue > 0) {
-            return romanNumeral(modValue,currentRomanValue);
+            return calculateRomanNumeral(modValue,currentRomanValue);
         }
         else {
             return currentRomanValue;
@@ -41,7 +41,7 @@ function romanNumeral(decimalValue, currentRomanValue) {
             currentRomanValue += "V";
         }
         if(modValue > 0) {
-            return romanNumeral(modValue,currentRomanValue);
+            return calculateRomanNumeral(modValue,currentRomanValue);
         }
         else {
             return currentRomanValue;
@@ -56,6 +56,7 @@ function romanNumeral(decimalValue, currentRomanValue) {
 }
 
 function getRomanNumeral() {
-    document.getElementById("erg").innerHTML=romanNumeral(9,"");
+    var inputValue = document.getElementById("inputValue").value;
+    document.getElementById("resultText").innerHTML = "Result = " + calculateRomanNumeral(inputValue,"");
 }
 
