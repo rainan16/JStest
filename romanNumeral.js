@@ -1,11 +1,99 @@
+/*
+http://www.mathsisfun.com/roman-numerals.html
+https://www.freecodecamp.com/challenges/roman-numeral-converter
+*/
 
+function calculateRomanNumeral2(decimalValue) {
+    //todo move portions to helper subroutine
 
-function calculateRomanNumeral(decimalValue, currentRomanValue) {
+    //1. split into power-of-10 packages
+    var stringValue = String(decimalValue);
+    var arrayValues = stringValue.split("");
+    var divValue = 0;
+    var currentRomanValue = "";
+    var i = 0;
+
+    // >= 1000 portion
+    if (arrayValues.length == 4) {
+        divValue = parseInt(arrayValues[0]);
+        for(i=0;i<divValue;i++) {
+            currentRomanValue += "M";
+        }
+        arrayValues.shift();
+    }
+
+    // >= 100 portion
+    if (arrayValues.length == 3) {
+        divValue = parseInt(arrayValues[0]);
+        if(divValue == 9) {
+            currentRomanValue += "CM";
+            divValue -= 9;
+        }
+        if(divValue >= 5) {
+            currentRomanValue += "D";
+            divValue -= 5;
+        }
+        if(divValue == 4) {
+            currentRomanValue += "CD";
+            divValue -= 4;
+        }
+        for(i=1;i<=divValue;i++) {
+            currentRomanValue += "C";
+        }
+        arrayValues.shift();
+    }
+
+    // >= 10 portion
+    if (arrayValues.length == 2) {
+        divValue = parseInt(arrayValues[0]);
+        if(divValue == 9) {
+            currentRomanValue += "XC";
+            divValue -= 9;
+        }
+        if(divValue >= 5) {
+            currentRomanValue += "L";
+            divValue -= 5;
+        }
+        if(divValue == 4) {
+            currentRomanValue += "XL";
+            divValue -= 4;
+        }
+        for(i=1;i<=divValue;i++) {
+            currentRomanValue += "X";
+        }
+        arrayValues.shift();
+    }
+
+    // >= 1 portion
+    if (arrayValues.length == 1) {
+        divValue = parseInt(arrayValues[0]);
+        if(divValue == 9) {
+            currentRomanValue += "IX";
+            divValue -= 9;
+        }
+        if(divValue >= 5) {
+            currentRomanValue += "V";
+            divValue -= 5;
+        }
+        if(divValue == 4) {
+            currentRomanValue += "IV";
+            divValue -= 4;
+        }
+        for(i=1;i<=divValue;i++) {
+            currentRomanValue += "I";
+        }
+        arrayValues.shift();
+    }
+
+    return currentRomanValue;
+}
+
+function calculateRomanNumeral1(decimalValue, currentRomanValue) {
+
+    // WRONG APPROACH!!!
 
     //todo: 9 should result in IX, not VIIII; 4 should result in IV not IIII, ...
     //todo: replace if ... else if with helper function
-    //http://www.mathsisfun.com/roman-numerals.html
-    //https://www.freecodecamp.com/challenges/roman-numeral-converter
 
     var divValue = 0;
     var modValue = 0;
@@ -99,6 +187,6 @@ function calculateRomanNumeral(decimalValue, currentRomanValue) {
 
 function getRomanNumeral() {
     var inputValue = document.getElementById("inputValue").value;
-    document.getElementById("resultText").innerHTML = "Result = " + calculateRomanNumeral(inputValue,"");
+    document.getElementById("resultText").innerHTML = "Result = " + calculateRomanNumeral2(inputValue);
 }
 
