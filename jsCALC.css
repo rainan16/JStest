@@ -76,8 +76,15 @@ button:hover {
     background-color: darkred;
 }
 
+footer>#ccaLic {
+    color: gray;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+}
+
 footer {
     margin-top: 5%;
     margin-left: 1em;
     display: block;
 }
+

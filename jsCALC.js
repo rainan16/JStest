@@ -86,6 +86,17 @@ function runCalc(curButton) {
         }
     }
 
+    //var wav = '/media/you-know.mp3';
+    var wav;
+    if(type === "CALC") {
+        wav = "https://notificationsounds.com/message-tones/aww-388/download/mp3"; //"https://notificationsounds.com/message-tones/you-know-508/download/mp3"
+    }
+    else {
+        wav = "https://notificationsounds.com/notification-sounds/beep-472/download/mp3";
+    }
+    var audio = new Audio(wav);
+    audio.play();
+
     sessionStorage.setItem("jsCALCstatus", status);
     document.getElementById("answerInput").innerHTML = retVal;
 };
