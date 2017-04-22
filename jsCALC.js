@@ -63,6 +63,10 @@ function runCalc(curButton) {
             retVal = "";
             status = "ready";
         }
+        //todo not allowed: multiple "." per value
+        else if (inValue === "." && oldValue.lastIndexOf('.', oldValue.length - 1) === oldValue.length - 1) {
+            retVal = oldValue;
+        }
         else if(oldValue === "0") {
             retVal = inValue;
             status = "input";
