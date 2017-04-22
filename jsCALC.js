@@ -1,5 +1,5 @@
 /**
- * Created by andre on 22.04.2017.
+ * Created by raineran16 on 22.04.2017.
  */
 
 function runCalc(curButton) {
@@ -18,16 +18,9 @@ function runCalc(curButton) {
         sessionStorage.setItem("jsCALCstatus", status);
     }
 
-    if(status === null) {
-        status = "input";
-    }
-    else if(status === "ready") {
-        oldValue = "";
-    }
-
     switch(inValue) {
         case "ce":
-            type = "CLS";
+            type = "CLS";   //todo functionality for "ce"
             break;
         case "ac":
             type = "CLS";
@@ -44,6 +37,21 @@ function runCalc(curButton) {
     }
     if(oldValue === "Error" && type != "CLS") {
         return oldValue;
+    }
+
+    if(status === null) {
+        status = "input";
+    }
+    else if(status === "ready") {
+        if(type === "FUNC") {
+            //use last value for further calculations
+        }
+        else if(type === "CALC") {
+            return oldValue;
+        }
+        else {
+            oldValue = "";
+        }
     }
 
     if(type === "CLS") {

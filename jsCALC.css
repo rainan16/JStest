@@ -2,11 +2,12 @@ body {
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 20px;
     background-color: #a9bbc6;
-    margin: 10%;
+    margin: 5%;
 }
 
 header>h1 {
-    font-size: 50px;
+    color: #444343;
+    font-size: 4rem;
 }
 
 #answerInput {
@@ -15,6 +16,7 @@ header>h1 {
 
 #entryBorderBox {
     font-size: 2rem;
+    font-weight: bolder;
     width: 20rem;
     height: 4rem;
     margin-left: 1.5rem;
@@ -24,6 +26,7 @@ header>h1 {
     border-radius: 1rem;
     background-color: #c3c2ab;
     text-align: right;
+    box-shadow: 1px 2px 0px 0px #9d9d9d, inset 1px 1px 5px 2px #9d9d9d;
 }
 
 #allButtons {
@@ -37,19 +40,25 @@ header>h1 {
 }
 
 button {
+    font-weight: bold;
+    font-size: 1.4rem;
     border-radius: 8px;
     border: none;
     color: #fff;
     background-color: #3a3a3a;
-    margin: 0 0.1em 1em 0.6em;
-    height: 4em;
-    width: 5em;
-    box-shadow: 0px 3px 0px 0px #444343, inset -1px -3px 10px 1px #9d9d9d;
+    margin: 0 0.1rem 1rem 0.6rem;
+    height: 3rem;
+    width: 4rem;
+    box-shadow: 0px 2px 0px 0px #444343, inset -1px -1px 3px 3px #919191;
 }
 
 button:active {
     transform: translate(0px, 3px);
     box-shadow: none;
+}
+
+button:hover {
+    box-shadow: -1px -1px 4px 4px #bdcfda, inset -1px -1px 3px 3px #919191;
 }
 
 
@@ -63,7 +72,12 @@ button:active {
     background-color: darkorange;
 }
 
+.redButton {
+    background-color: darkred;
+}
+
 footer {
     margin-top: 5%;
+    margin-left: 1em;
     display: block;
 }
