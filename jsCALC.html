@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="raineran16">
+        <title>jsCALC - JavaScript Calculator</title>
+        <script type="text/javascript" src="jsCALC.js"></script>
+        <link href="jsCALC.css" rel="stylesheet"></link>
+    </head>
+    <body>
+        <header>
+            <h1>jsCALC</h1>
+        </header>
+
+        <div id="entryBorderBox">
+            <div id="numberInput">
+                <p id="answerInput">0</p>
+            </div>
+        </div>
+
+        <div id="allButtons">
+
+            <button onclick="runCalc(this)" class="red" value="ac">AC</button>
+            <button onclick="runCalc(this)" class="red" value="ce">CE</button>
+            <button onclick="runCalc(this)" class="dummyButton" value=""></button>
+            <button onclick="runCalc(this)" class="orangeButton" value="/">&divide;</button>
+
+            <button onclick="runCalc(this)" value="7">7</button>
+            <button onclick="runCalc(this)" value="8">8</button>
+            <button onclick="runCalc(this)" value="9">9</button>
+            <button onclick="runCalc(this)" class="orangeButton" value="*">x</button>
+
+            <button onclick="runCalc(this)" value="4">4</button>
+            <button onclick="runCalc(this)" value="5">5</button>
+            <button onclick="runCalc(this)" value="6">6</button>
+            <button onclick="runCalc(this)" class="orangeButton" value="-">-</button>
+
+            <button onclick="runCalc(this)" value="1">1</button>
+            <button onclick="runCalc(this)" value="2">2</button>
+            <button onclick="runCalc(this)" value="3">3</button>
+            <button onclick="runCalc(this)" class="orangeButton" value="+">+</button>
+
+            <button onclick="runCalc(this)" class="dummyButton" value=""></button>
+            <button onclick="runCalc(this)" id="zeroButton" value="0">0</button>
+            <button onclick="runCalc(this)" value=".">.</button>
+            <button onclick="runCalc(this)" class="orangeButton" id="equalButton" value="=">=</button>
+
+        </div>
+        <footer>
+            <i><a href="https://raineran16.github.io/JStest/">created by raineran16</a></i>
+        </footer>
+    </body>
+</html>
