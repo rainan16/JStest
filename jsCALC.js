@@ -20,7 +20,7 @@ function runCalc(curButton) {
 
     switch(inValue) {
         case "ce":
-            type = "CLS";   //todo functionality for "ce"
+            type = "CE";
             break;
         case "ac":
             type = "CLS";
@@ -35,7 +35,7 @@ function runCalc(curButton) {
             type = "CALC";
             break;
     }
-    if(oldValue === "Error" && type != "CLS") {
+    if(oldValue === "Error" && (type != "CLS" && type != "CE")) {
         return oldValue;
     }
 
@@ -58,13 +58,16 @@ function runCalc(curButton) {
         retVal = "0";
         status = "ready";
     }
+    else if(type === "CE") {
+        retVal = "0";
+        status = "ready";
+    }
     else {
         if (oldValue.length === 0 && isNaN(inValue) && inValue !== '.' || oldValue.length === 0 && inValue === '0') {
             retVal = "";
             status = "ready";
         }
-        //todo not allowed: multiple "." per value
-        else if (inValue === "." && oldValue.lastIndexOf('.', oldValue.length - 1) === oldValue.length - 1) {
+        else if (inValue === "." && !checkDecimal(oldValue)) {
             retVal = oldValue;
         }
         else if(oldValue === "0") {
@@ -99,4 +102,25 @@ function runCalc(curButton) {
 
     sessionStorage.setItem("jsCALCstatus", status);
     document.getElementById("answerInput").innerHTML = retVal;
-};
+}
+
+
+function checkDecimal(checkValue) {
+    var valuesArray = [];
+    var i = 0;
+    var tempValue = checkValue + ".";
+
+    if (checkValue.lastIndexOf('.', checkValue.length - 1) === checkValue.length - 1) {
+        return false;
+    }
+
+    valuesArray = tempValue.replace(/\+/g, ";").replace(/\-/g, ";").replace(/\*/g, ";").replace(/\//g, ";").split(";");
+    if (valuesArray.length > 0) {
+        var matches = valuesArray[valuesArray.length-1].split(".").length - 1;
+        if(matches > 1) {
+            return false;
+        }
+    }
+
+    return true;
+}
