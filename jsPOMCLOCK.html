@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="raineran16">
+    <title>jsPOMCLOCK - JavaScript pomodoro clock</title>
+    <script type="text/javascript" src="jsPOMCLOCK.js"></script>
+    <link href="jsPOMCLOCK.css" rel="stylesheet"></link>
+</head>
+    <body>
+        <header>
+            <h1>jsPOMCLOCK</h1>
+        </header>
+        <section>
+            <div class="session">
+                <div class="howlong">
+                    <p>break length</p>
+                    <button class="minus" ng-click="howLongChange(-1)">-</button>
+                    <span class="time">30:00</span>
+                    <button class="plus" ng-click="howLongChange(1)">+</button>
+                </div>
+            </div>
+        </section>
+        <section click="toggleTimer()">
+            <div class="timer">
+                <p class="titleTimer">Session</p>
+                <p id="timeLeft">30:00</p>
+                <div class="arc"></div>
+            </div>
+        </section>
+        <footer>
+            <i><a href="https://raineran16.github.io/JStest/">created by raineran16</a></i>
+        </footer>
+    </body>
+</html>
