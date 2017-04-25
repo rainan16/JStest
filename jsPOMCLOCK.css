@@ -13,11 +13,26 @@ body {
     background-color: #d7cec7;
     color: #565656;
     margin: 5%;
+    cursor: default;
 }
 
 header>h1 {
     color: #76323f;
     font-size: 4rem;
+}
+
+.sessionlength {
+    font-size:2rem;
+    font-weight: 300;
+}
+
+.minus, .plus {
+    background-color: #d7cec7;
+    color: #565656;
+    font-size:2rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 section .titleTimer {
@@ -38,6 +53,7 @@ section .timer {
     font-size: 4em;
     border-radius: 50%;
     background: #C09F80;
+    cursor: pointer;
 }
 
 

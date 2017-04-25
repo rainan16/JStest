@@ -14,17 +14,17 @@
         <section>
             <div class="session">
                 <div class="howlong">
-                    <p>break length</p>
-                    <button class="minus" ng-click="howLongChange(-1)">-</button>
-                    <span class="time">30:00</span>
-                    <button class="plus" ng-click="howLongChange(1)">+</button>
+                    <p class="sessionlength">Session length</p>
+                    <button class="minus" onclick="howLongChange(-1)">-</button>
+                    <span class="sessionlength" id="timespan">15:00</span>
+                    <button class="plus" onclick="howLongChange(1)">+</button>
                 </div>
             </div>
         </section>
         <section click="toggleTimer()">
             <div class="timer">
                 <p class="titleTimer">Session</p>
-                <p id="timeLeft">30:00</p>
+                <p id="timeLeft">15:00</p>
                 <div class="arc"></div>
             </div>
         </section>
