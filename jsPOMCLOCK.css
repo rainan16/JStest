@@ -35,7 +35,7 @@ header>h1 {
     cursor: pointer;
 }
 
-section .titleTimer {
+section #titleTimer {
     padding-top: 2rem;
     font-size: 3rem;
 }
@@ -82,4 +82,14 @@ section .fill {
     right: 0;
     left: 0;
     z-index: -1;
+}
+
+footer {
+    margin-top: 4rem;
+}
+
+footer>#ccaLic {
+    color: gray;
+    margin-top: 2rem;
+    font-size: 0.8rem;
 }
